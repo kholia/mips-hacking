@@ -1,3 +1,19 @@
+#### Easily start a mips virtualmachine with arm_now
+
+```sh
+$ sudo pip3 install https://github.com/nongiach/arm_now/archive/master.zip
+$ arm_now start mips32el
+Welcome to Buildroot
+buildroot login: root
+# uname -m
+mips
+# gdb /bin/ls
+(gdb) start
+Temporary breakpoint 1, 0x00405434 in main ()
+(gdb) x/i $pc
+=> 0x405434 <main+12>:	li	a0,-1
+```
+
 #### Get Debian for MIPS
 
 * http://ftp.debian.org/debian/dists/stretch/main/installer-mips/current/images/malta/netboot/
