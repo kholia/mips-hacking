@@ -1,3 +1,25 @@
+#### (UPDATE) Easily start a MIPS VM with arm_now
+
+```sh
+$ pip3 install --user https://github.com/nongiach/arm_now/archive/master.zip --upgrade
+
+$ arm_now start mips32
+Welcome to Buildroot
+buildroot login: root
+# uname -m
+mips
+# gdb /bin/ls
+(gdb) start
+Temporary breakpoint 1, 0x00405434 in main ()
+(gdb) x/i $pc
+=> 0x405434 <main+12>:	li	a0,-1
+```
+
+Note: The `mips32` VM image seems to be pretty limited (no gdb, no
+apt-get/opkg). I recommend using the following method for getting a proper
+`mips32` image.
+
+
 #### Get Debian for MIPS
 
 * http://ftp.debian.org/debian/dists/stretch/main/installer-mips/current/images/malta/netboot/
